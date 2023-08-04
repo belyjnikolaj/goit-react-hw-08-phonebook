@@ -33,24 +33,6 @@ const App = () => {
       </Route>      
     </Routes>      
   )
-//   const dispatch = useDispatch();
-//   const isLoading = useSelector(selectIsLoading);
-//   const error = useSelector(selectError);
-//   useEffect(() => {
-//     dispatch(fetchContacts());
-//   }, [dispatch]);
-
-//   return (
-//     <div className={css['phonebook__container']}>
-      
-//       <h1 className={css['phonebook__title']}>Phonebook</h1>
-//       <ContactForm />
-//       {isLoading && !error ? <Loader /> : null}  
-//       <h2 className={css['contacts__title']}>Contacts</h2>
-//       <Filter />
-//       <ContactList />
-//     </div>
-//   );
 };
 
 export default App;

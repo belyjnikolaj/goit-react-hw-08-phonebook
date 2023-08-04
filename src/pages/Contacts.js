@@ -6,8 +6,9 @@ import ContactForm from 'components/contactForm';
 import ContactList from 'components/contactList';
 import { fetchContacts } from 'redux/operations';
 import Loader from 'components/loader/Loader';
+import Filter from 'components/filter';
 
-export default function Tasks() {
+export default function Contacts() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
 
@@ -18,9 +19,10 @@ export default function Tasks() {
   return (
     <>
       <Helmet>
-        <title>Your tasks</title>
+        <title>Your contacts</title>
       </Helmet>
-      <ContactForm />
+      <ContactForm />      
+      <Filter />
       <div>{isLoading && <Loader/>}</div>
       <ContactList />
     </>

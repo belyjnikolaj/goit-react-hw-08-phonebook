@@ -1,15 +1,28 @@
 import { NavLink } from 'react-router-dom';
 import css from './AuthNav.module.css';
+import styled from "styled-components";
+
+const StyledLink = styled(NavLink)`
+  color: white;
+  text-decoration: none;
+
+  &.active {
+    color: rgb(245, 124, 0);
+  }
+ &:hover {
+  text-decoration: underline;
+ }
+`;
 
 const AuthNav = () => {
   return (
     <div>
-      <NavLink className={css.link} to="/register">
+      <StyledLink className={css.link} to="/register">
         Register
-      </NavLink>
-      <NavLink className={css.link} to="/login">
+      </StyledLink>
+      <StyledLink className={css.link} to="/login">
         Log In
-      </NavLink>
+      </StyledLink>
     </div>
   );
 };

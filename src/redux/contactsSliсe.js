@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addContact, deleteContact, fetchContacts } from './operations';
+import { addContact, changeContact, deleteContact, fetchContacts } from './operations';
 import { logOut } from './auth/operations';
 
 const handlePending = state => {
@@ -28,6 +28,21 @@ const handleDeleteContact = (state, action) => {
   state.items.splice(index, 1);
 };
 
+const handleСhangeContact = (state, action) => { 
+  state.isLoading = false;
+  state.error = null;
+
+  const { id, name, number } = action.payload;
+  const existingContact = state.items.find(contact => contact.id === id);
+
+  if (existingContact) {
+    existingContact.name = name;
+    existingContact.number = number;
+  } else {
+    state.error = "Contact update failed.";
+  }
+};
+
 const handleLogOut = state => {
   state.items = [];
   state.error = null;
@@ -52,6 +67,9 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.pending, handlePending)
       .addCase(deleteContact.fulfilled, handleDeleteContact)
       .addCase(deleteContact.rejected, handleRejected)
+      .addCase(changeContact.pending, handlePending)
+      .addCase(changeContact.fulfilled, handleСhangeContact)
+      .addCase(changeContact.rejected, handleRejected)
       .addCase(logOut.fulfilled, handleLogOut),
 });
 

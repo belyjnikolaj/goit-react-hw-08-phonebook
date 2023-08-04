@@ -1,17 +1,18 @@
-import AppBar from 'components/appBar'
+import { Container } from '@mui/material'
+import Header from 'components/header/Header'
 import React, { Suspense } from 'react'
 import { Toaster } from 'react-hot-toast'
 import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
     return (
-        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
-            <AppBar />
+        <Container style={{ padding: '0'}}>
+            <Header />
             <Suspense fallback={null}>
                 <Outlet/>
             </Suspense>
             <Toaster position='bottom-right' reverseOrder={false} />
-        </div>
+        </Container>
   )
 }
 

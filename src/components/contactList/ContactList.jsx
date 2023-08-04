@@ -10,7 +10,7 @@ const ContactList = () => {
         {filteredContacts.length === 0 ? (
           <p>No contacts available</p>
         ) : (
-          <ul>
+          <ul style={{ padding: '0 3vw'}}>
             {filteredContacts.map((contact) => (
                   <Contact contact = { contact } key={contact.id} />                
               ))}
@@ -19,7 +19,5 @@ const ContactList = () => {
       </>
     );
 }
-
-
 
 export default ContactList;
