@@ -52,32 +52,35 @@ const RegisterForm = () => {
                 <AccountCircleIcon />
               </InputAdornment>
             ),
-          }}   
-          type="text" 
-          name="name" 
-          label="Username" 
+          }}
+          type="text"
+          name="name"
+          label="Username"
           fullWidth
-          color='primary'
+          color="primary"
           placeholder="Enter name"
+          autoComplete="username"
         />
-        <TextField 
+        <TextField
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
                 <MailOutlineSharpIcon />
               </InputAdornment>
             ),
-          }} 
-          type="email" 
-          name="email" 
-          label="Email" 
-          fullWidth 
-          color='primary'
+          }}
+          type="email"
+          name="email"
+          label="Email"
+          fullWidth
+          color="primary"
           placeholder="Enter email"
+          autoComplete="email"
         />
         <FormControl variant="outlined">
-          
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-password">
+            Password
+          </InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             type={showPassword ? 'text' : 'password'}
@@ -97,12 +100,18 @@ const RegisterForm = () => {
             }
             label="Password"
             name="password"
-          fullWidth
-          color='primary'
-          placeholder="Enter password"
+            fullWidth
+            color="primary"
+            placeholder="Enter password"
+            autoComplete="current-password"
           />
         </FormControl>
-        <Button type="submit" variant="contained" disableElevation color='primary'>
+        <Button
+          type="submit"
+          variant="contained"
+          disableElevation
+          color="primary"
+        >
           Register
         </Button>
       </ThemeProvider>

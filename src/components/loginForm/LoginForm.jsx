@@ -42,25 +42,27 @@ const LoginForm = () => {
   return (
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <ThemeProvider theme={theme}>
-        <TextField 
+        <TextField
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
                 <MailOutlineSharpIcon />
               </InputAdornment>
             ),
-          }} 
-          type="email" 
-          name="email" 
-          label="Email" 
-          fullWidth 
-          color='primary'
+          }}
+          type="email"
+          name="email"
+          label="Email"
+          fullWidth
+          color="primary"
           id="outlined-textarea"
-          placeholder="Enter email"          
+          placeholder="Enter email"
+          autoComplete="email"
         />
         <FormControl variant="outlined">
-          
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-password">
+            Password
+          </InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             type={showPassword ? 'text' : 'password'}
@@ -80,12 +82,18 @@ const LoginForm = () => {
             }
             label="Password"
             name="password"
-          fullWidth
-          color='primary'
-          placeholder="Enter password"
+            fullWidth
+            color="primary"
+            placeholder="Enter password"
+            autoComplete="current-password"
           />
         </FormControl>
-        <Button type="submit" variant="contained" disableElevation color='primary'>
+        <Button
+          type="submit"
+          variant="contained"
+          disableElevation
+          color="primary"
+        >
           Log In
         </Button>
       </ThemeProvider>
